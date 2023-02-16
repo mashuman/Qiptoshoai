@@ -64,7 +64,7 @@ bool CCoinsViewCache::GetCoin(const COutPoint &outpoint, Coin &coin) const {
         coin = it->second.coin;
         return !coin.IsSpent();
     }
-    return true;
+    return false;
 }
 
 void CCoinsViewCache::AddCoin(const COutPoint &outpoint, Coin&& coin, bool possible_overwrite) {
